@@ -65,6 +65,20 @@ public class Operators {
         System.out.println("a & b = " + booleanAnd(a, b)); // 0
         System.out.println("a | b = " + booleanOr(a, b)); // 15
         System.out.println("a ! b = " + booleanNot(a, b)); // 10
+
+        // Ternary Operators
+        System.out.println("a > b ? a : b = " + ternaryOperator(a, b)); // 5
+
+        // Instance of Operator
+        Operators obj = new Operators();
+        System.out.println(obj.getName("Rajesh")); // Hello Rajesh
+        System.out.println("obj instanceof Operators = " + (obj instanceof Operators)); // true
+
+        // New Operator
+        System.out.println("new Operators() = " + new Operators()); // new Operators()
+    
+        // Cast Operator
+        System.out.println("(int) 3.14 = " + (int) 3.14); // 3
     }
 
     /* 1. ================== Arithmetic Operators ================== */
@@ -189,19 +203,31 @@ public class Operators {
 
     /* 8. ================== Boolean Operators ================== */
 
-    //1. Boolean AND: (&&)
+    // 1. Boolean AND: (&&)
     public static boolean booleanAnd(int a, int b) {
         return a > 0 & b > 0;
     }
 
-    //2. Boolean OR: (||)
+    // 2. Boolean OR: (||)
     public static boolean booleanOr(int a, int b) {
         return a > 7 | b > 7;
     }
 
-    //3. Boolean NOT: (!)
+    // 3. Boolean NOT: (!)
     public static boolean booleanNot(int a, int b) {
         return !(a > 0);
+    }
+
+    /* 9. ================== Ternary Operators ================== */
+    public static int ternaryOperator(int a, int b) {
+        return a > b ? a : b;
+    }
+
+    // -------------------------------------------------------------------------
+
+    /* 10. ================== Instance Operators ================== */
+    public String getName(String name) {
+        return "Hello " + name;
     }
 
 }
