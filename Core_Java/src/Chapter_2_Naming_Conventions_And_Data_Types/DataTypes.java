@@ -33,6 +33,8 @@ package Chapter_2_Naming_Conventions_And_Data_Types;
 // 5. Enums
 // 6. Annotations
 
+
+@SuppressWarnings("unused")
 public class DataTypes {
 
     // Main method
