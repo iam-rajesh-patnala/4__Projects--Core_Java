@@ -1,6 +1,5 @@
 package Chapter_3_Operators;
-
-// Operators
+/*  ------------------- Operators ------------------- */
 
 // 1. Arithmetic Operators
 // 2. Unary Operators
@@ -76,7 +75,7 @@ public class Operators {
 
         // New Operator
         System.out.println("new Operators() = " + new Operators()); // new Operators()
-    
+
         // Cast Operator
         System.out.println("(int) 3.14 = " + (int) 3.14); // 3
     }
