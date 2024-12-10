@@ -2,17 +2,11 @@ package Chapter_5_Input_and_Output;
 
 // BufferedReader
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
-// IO Exceptions is Handling exception
-import java.io.IOException;
-
-// Scanner class
-import java.util.Scanner;
-
-// File reader
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /* ------------------- Input and Output ------------------- */
 
@@ -30,7 +24,7 @@ import java.io.FileReader;
 // 4. Reading input with java.io.BufferedReader class
 // 5. Displaying Output with System.out.printf(), System.out.println() and System.out.print()
 // 6. Displaying formatted Output with String.format()
-
+// 7. Display error messages with System.err.println()
 public class InputAndOutput {
 
     // Main method
@@ -316,6 +310,11 @@ public class InputAndOutput {
         double height = 1.8;
         String output = String.format("Name: %s, Age: %d, Height: %.2f", name, age, height);
         System.out.println(output);
+    }
+
+    // 7. Displaying error messages with System.err.println()
+    public static void displayErrorMessages() {
+        System.err.println("This is an error message.");
     }
 
 }
