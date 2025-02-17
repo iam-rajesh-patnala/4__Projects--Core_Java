@@ -33,7 +33,6 @@ package Chapter_2_Naming_Conventions_And_Data_Types;
 // 5. Enums
 // 6. Annotations
 
-
 @SuppressWarnings("unused")
 public class DataTypes {
 
@@ -86,13 +85,13 @@ public class DataTypes {
         }
 
         // 4. Interfaces
-        interface Animal {
-        }
+        // interface Animal {
+        // }
 
         // 5. Enums
-        enum Color {
-            RED, GREEN, BLUE
-        }
+        // enum Color {
+        // RED, GREEN, BLUE
+        // }
 
         // 6. Annotations
         /*

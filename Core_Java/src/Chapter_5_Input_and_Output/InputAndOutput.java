@@ -80,24 +80,24 @@ public class InputAndOutput {
         System.out.println("You entered: " + str);
 
         // 2. Create Scanner object to accept input from the keyboard
-        Scanner scObj = new Scanner(System.in);
-        String str2 = scObj.nextLine();
-        System.out.println("You entered: " + str2);
+        try (Scanner scObj = new Scanner(System.in)) {
+            String str2 = scObj.nextLine();
+            System.out.println("You entered: " + str2);
 
-        // 3. Accepting a different type of input from the keyboard
-        char character = (char) System.in.read();
-        System.out.println("You entered: " + character);
-        scObj.close();
+            // 3. Accepting a different type of input from the keyboard
+            char character = (char) System.in.read();
+            System.out.println("You entered: " + character);
+        }
     }
 
     // 1.1 - Accepting a single character ---------------------
     public static void acceptSingleCharacter() throws IOException {
 
         // Using Scanner class
-        Scanner sc = new Scanner(System.in);
-        char character = sc.next().charAt(0);
-        System.out.println("You entered: " + character);
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            char character = sc.next().charAt(0);
+            System.out.println("You entered: " + character);
+        }
 
         // Using BufferedReader class
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -109,10 +109,10 @@ public class InputAndOutput {
     public static void acceptString() throws IOException {
 
         // Using Scanner class
-        Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
-        System.out.println("You entered: " + str);
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            String str = sc.nextLine();
+            System.out.println("You entered: " + str);
+        }
 
         // Using BufferedReader class
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -124,10 +124,10 @@ public class InputAndOutput {
     public static void acceptInteger() throws IOException {
 
         // Using Scanner class
-        Scanner sc = new Scanner(System.in);
-        int integer = sc.nextInt();
-        System.out.println("You entered: " + integer);
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            int integer = sc.nextInt();
+            System.out.println("You entered: " + integer);
+        }
 
         // Using BufferedReader class
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -139,10 +139,10 @@ public class InputAndOutput {
     public static void acceptFloat() throws IOException {
 
         // Using Scanner class
-        Scanner sc = new Scanner(System.in);
-        float f = sc.nextFloat();
-        System.out.println("You entered: " + f);
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            float f = sc.nextFloat();
+            System.out.println("You entered: " + f);
+        }
 
         // Using BufferedReader class
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -154,10 +154,10 @@ public class InputAndOutput {
     public static void acceptDouble() throws IOException {
 
         // Using Scanner class
-        Scanner sc = new Scanner(System.in);
-        double d = sc.nextDouble();
-        System.out.println("You entered: " + d);
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            double d = sc.nextDouble();
+            System.out.println("You entered: " + d);
+        }
 
         // Using BufferedReader class
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -169,10 +169,10 @@ public class InputAndOutput {
     public static void acceptBoolean() throws IOException {
 
         // Using Scanner class
-        Scanner sc = new Scanner(System.in);
-        boolean b = sc.nextBoolean();
-        System.out.println("You entered: " + b);
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            boolean b = sc.nextBoolean();
+            System.out.println("You entered: " + b);
+        }
 
         // Using BufferedReader class
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -184,14 +184,14 @@ public class InputAndOutput {
     public static void acceptOtherTypesOfValues() throws IOException {
 
         // Using Scanner class
-        Scanner sc = new Scanner(System.in);
-        byte byteVal = sc.nextByte();
-        short shortVal = sc.nextShort();
-        long longVal = sc.nextLong();
-        System.out.println("You entered: " + byteVal);
-        System.out.println("You entered: " + shortVal);
-        System.out.println("You entered: " + longVal);
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            byte byteVal = sc.nextByte();
+            short shortVal = sc.nextShort();
+            long longVal = sc.nextLong();
+            System.out.println("You entered: " + byteVal);
+            System.out.println("You entered: " + shortVal);
+            System.out.println("You entered: " + longVal);
+        }
 
         // Using BufferedReader class
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -205,41 +205,50 @@ public class InputAndOutput {
 
     // 2. Accepting input from a file ---------------------
     public static void acceptInputFromFile() throws IOException {
+
         // Using Scanner class
-        Scanner sc = new Scanner(new File("input.txt"));
-        while (sc.hasNextLine()) {
-            System.out.println(sc.nextLine());
+        try (Scanner sc = new Scanner(new File("input.txt"))) {
+            while (sc.hasNextLine()) {
+                System.out.println(sc.nextLine());
+            }
         }
-        sc.close();
 
         // Using BufferedReader class
-        BufferedReader br = new BufferedReader(new FileReader("input.txt"));
-        while (br.ready()) {
-            System.out.println(br.readLine());
+        try (BufferedReader br = new BufferedReader(new FileReader("input.txt"))) {
+            while (br.ready()) {
+                System.out.println(br.readLine());
+            }
         }
-        br.close();
     }
 
     // 3. Reading input with java.util.Scanner class
     public static void readInputWithScanner() throws IOException {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your name: ");
-        String name = sc.nextLine();
-        System.out.println("Enter your age: ");
-        int age = sc.nextInt();
-        System.out.println("Enter your height: ");
-        double height = sc.nextDouble();
-        System.out.println("Enter your weight: ");
-        float weight = sc.nextFloat();
-        System.out.println("Enter your address: ");
-        String address = sc.nextLine();
-        System.out.println("Enter your phone number: ");
-        long phoneNumber = sc.nextLong();
-        System.out.println("Enter your email: ");
-        String email = sc.nextLine();
-        System.out.println("Enter your password: ");
-        String password = sc.nextLine();
-        sc.close();
+        String name;
+        int age;
+        double height;
+        float weight;
+        String address;
+        long phoneNumber;
+        String email;
+        String password;
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Enter your name: ");
+            name = sc.nextLine();
+            System.out.println("Enter your age: ");
+            age = sc.nextInt();
+            System.out.println("Enter your height: ");
+            height = sc.nextDouble();
+            System.out.println("Enter your weight: ");
+            weight = sc.nextFloat();
+            System.out.println("Enter your address: ");
+            address = sc.nextLine();
+            System.out.println("Enter your phone number: ");
+            phoneNumber = sc.nextLong();
+            System.out.println("Enter your email: ");
+            email = sc.nextLine();
+            System.out.println("Enter your password: ");
+            password = sc.nextLine();
+        }
 
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
@@ -253,24 +262,32 @@ public class InputAndOutput {
 
     // 4. Reading input with java.io.BufferedReader class
     public static void readInputWithBufferedReader() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter your name: ");
-        String name = br.readLine();
-        System.out.println("Enter your age: ");
-        int age = Integer.parseInt(br.readLine());
-        System.out.println("Enter your height: ");
-        double height = Double.parseDouble(br.readLine());
-        System.out.println("Enter your weight: ");
-        float weight = Float.parseFloat(br.readLine());
-        System.out.println("Enter your address: ");
-        String address = br.readLine();
-        System.out.println("Enter your phone number: ");
-        long phoneNumber = Long.parseLong(br.readLine());
-        System.out.println("Enter your email: ");
-        String email = br.readLine();
-        System.out.println("Enter your password: ");
-        String password = br.readLine();
-        br.close();
+        String name;
+        int age;
+        double height;
+        float weight;
+        String address;
+        long phoneNumber;
+        String email;
+        String password;
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            System.out.println("Enter your name: ");
+            name = br.readLine();
+            System.out.println("Enter your age: ");
+            age = Integer.parseInt(br.readLine());
+            System.out.println("Enter your height: ");
+            height = Double.parseDouble(br.readLine());
+            System.out.println("Enter your weight: ");
+            weight = Float.parseFloat(br.readLine());
+            System.out.println("Enter your address: ");
+            address = br.readLine();
+            System.out.println("Enter your phone number: ");
+            phoneNumber = Long.parseLong(br.readLine());
+            System.out.println("Enter your email: ");
+            email = br.readLine();
+            System.out.println("Enter your password: ");
+            password = br.readLine();
+        }
 
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);

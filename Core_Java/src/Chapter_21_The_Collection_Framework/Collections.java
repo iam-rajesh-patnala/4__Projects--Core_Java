@@ -63,7 +63,10 @@ public class Collections {
     // Hash Map
     public static void HashMap() throws Exception {
 
-        /* ----------- TreeMap -> Sorted by not specific, !Allows null values ----------- */
+        /*
+         * ----------- HashMap -> Sorted by not specific, !Allows null values
+         * -----------
+         */
         HashMap<Integer, String> hashMapObj = new HashMap<>();
 
         // Adding elements to the HashMap
@@ -98,7 +101,10 @@ public class Collections {
     // Linked Hash Map
     public static void LinkedHashMap() throws Exception {
 
-        /* ----------- TreeMap -> Sorted by Insertion, !Allows null values ----------- */
+        /*
+         * ----------- LinkedHashMap -> Sorted by Insertion, !Allows null values
+         * -----------
+         */
         LinkedHashMap<String, Boolean> linkedHashMapObj = new LinkedHashMap<>();
 
         // Adding elements to the LinkedHashMap
@@ -129,4 +135,5 @@ public class Collections {
         System.out.println(linkedHashMapObj);
 
     }
+
 }
